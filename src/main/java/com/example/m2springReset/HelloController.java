@@ -3,6 +3,7 @@ package com.example.m2springReset;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+
 @RestController
 public class HelloController {
 

@@ -5,8 +5,19 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Clase controlador para Coches
+ *
+ */
+
 @RestController
 public class CarController {
+
+    /**
+     * Método ficticio para devolver un objeto y verlo en Postman
+     * @return
+     */
+
 
     @GetMapping("/coche")
     public Car findCar(){
@@ -39,13 +50,6 @@ public class CarController {
         return cars;
     }
 
-    // GUARDAR DATOS => Para poder meter datos a través de la consola en base de datos
-    @PostMapping ("/coches")
-    public void save (@RequestBody Car coche) {
-        System.out.println(coche.getManufacturer() + " " + coche.getModel());
-    }
-
-
     @GetMapping("/coches")
     public List<Car> findAll () {
         List<Car> cars = new ArrayList<>();
@@ -58,5 +62,12 @@ public class CarController {
         cars.add (new Car (5L, "Fiat", "Panda"));
         return cars;
     }
+
+    // GUARDAR DATOS => Para poder meter datos a través de la consola en base de datos
+    @PostMapping ("/coches")
+    public void save (@RequestBody Car coche) {
+        System.out.println(coche.getManufacturer() + " " + coche.getModel());
+    }
+
 
 }
